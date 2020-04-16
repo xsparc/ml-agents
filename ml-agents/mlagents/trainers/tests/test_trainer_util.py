@@ -60,7 +60,6 @@ def dummy_bad_config():
         default:
             trainer: incorrect_trainer
             brain_to_imitate: ExpertBrain
-            batches_per_epoch: 16
             batch_size: 32
             beta: 5.0e-3
             buffer_size: 512
