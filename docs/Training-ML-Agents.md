@@ -49,8 +49,8 @@ where
 - `<env_name>`**(Optional)** is the name (including path) of your
   [Unity executable](Learning-Environment-Executable.md) containing the agents
   to be trained. If `<env_name>` is not passed, the training will happen in the
-  Editor. Press the :arrow_forward: button in Unity when the message _"Start
-  training by pressing the Play button in the Unity Editor"_ is displayed on
+  Editor. Press the :arrow*forward: button in Unity when the message *"Start
+  training by pressing the Play button in the Unity Editor"\_ is displayed on
   the screen.
 - `<run-identifier>` is a unique name you can use to identify the results of
   your training runs.
@@ -320,16 +320,25 @@ configurations. We present them below in two separate tables, but keep in mind
 that you only need to include the configurations for the trainer selected (i.e.
 the `trainer` setting above).
 
-PPO-specific configurations: | **Setting** | **Description** |
-:--------------------- |
-:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| | beta | TBC | epsilon | TBC | lambd | TBC | num_epoch | TBC
+PPO-specific configurations:
 
-SAC-specific configurations: | **Setting** | **Description** |
-:--------------------- |
-:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| | buffer_init_steps | TBC | init_entcoef | TBC | save_replay_buffer | TBC |
-tau | TBC | train_interval | TBC | num_update | TBC
+| **Setting** | **Description** |
+| :---------- | :-------------- |
+| beta        | TBC             |
+| epsilon     | TBC             |
+| lambd       | TBC             |
+| num_epoch   | TBC             |
+
+SAC-specific configurations:
+
+| **Setting**        | **Description** |
+| :----------------- | :-------------- |
+| buffer_init_steps  | TBC             |
+| init_entcoef       | TBC             |
+| save_replay_buffer | TBC             |
+| tau                | TBC             |
+| train_interval     | TBC             |
+| num_update         | TBC             |
 
 #### Memory-enhanced agents using Recurrent Neural Networks
 
