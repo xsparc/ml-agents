@@ -2,7 +2,6 @@
 from typing import Dict, List
 from collections import defaultdict
 import abc
-import time
 
 from mlagents.trainers.optimizer.tf_optimizer import TFOptimizer
 from mlagents.trainers.buffer import AgentBuffer
@@ -152,8 +151,13 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
                     except AgentManagerQueue.Empty:
                         break
                 if self.threaded and not _queried:
-                    # Avoid busy-waiting
-                    time.sleep(0.5)
+                    # Yield for a while but keep going if
+                    # trajectory is sent
+                    try:
+                        t = traj_queue.get(timeout=0.05)
+                        self._process_trajectory(t)
+                    except AgentManagerQueue.Empty:
+                        pass
         if self.should_still_train:
             if self._is_ready_update():
                 with hierarchical_timer("_update_policy"):
