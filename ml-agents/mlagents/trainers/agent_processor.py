@@ -271,7 +271,6 @@ class AgentManagerQueue(Generic[T]):
         if the queue is empty.
         """
         try:
-            print("Gettting")
             return self._queue.get(block=block, timeout=timeout)
         except queue.Empty:
             raise self.Empty("The AgentManagerQueue is empty.")
